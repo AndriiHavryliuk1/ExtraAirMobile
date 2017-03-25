@@ -1,0 +1,28 @@
+<h1 class="app-name"></h1>
+
+<div id="uiSidebarLeft"  class="scrollable">
+    <div class="scrollable-header app-name" >
+        <h3 style="padding-top: 10px;">ExtraAir</h3>
+        <div ng-show="isAuthorized">
+            <h4>{{currentUser.FirstName}} {{currentUser.LastName}}</h4>
+            <h5>{{currentUser.Email}}</h5>
+        </div>
+    </div>
+
+
+    <div class="scrollable-content">
+    <div class="list-group" ui-turn-off='uiSidebarLeft'>
+      <a class="list-group-item" href="#/">Search flight<i class="fa fa-chevron-right pull-right"></i></a>
+        <a class="list-group-item" href="#/login">Account<i class="fa fa-chevron-right pull-right"></i></a>
+        <a class="list-group-item" href="#/map">Map<i class="fa fa-chevron-right pull-right"></i></a>
+        <a ng-show="isAuthorized" class="list-group-item" href="#/listoforders">Your orders<i class="fa fa-chevron-right pull-right"></i></a>
+        <a class="list-group-item" href="#/help">Help<i class="fa fa-chevron-right pull-right"></i></a>
+        <!--
+      <a class="list-group-item" href="#/shedule">Розклад<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/map">Карта<i class="fa fa-chevron-right pull-right"></i></a>
+	  <a class="list-group-item" href="#/notes">Нотатки<i class="fa fa-chevron-right pull-right"></i></a>
+	  <a class="list-group-item" href="#/user">Налаштування<i class="fa fa-chevron-right pull-right"></i></a>
+	  <a class="list-group-item" href="#/points">Середній бал<i class="fa fa-chevron-right pull-right"></i></a> -->
+    </div>
+  </div>
+</div>

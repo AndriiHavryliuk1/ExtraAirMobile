@@ -1,0 +1,65 @@
+<section class="section container-fluid scrollable" style="height: 100% !important;" >
+  <img src="loading.gif" style="display: block;margin-top:auto;margin-bottomt: auto;
+  margin-left:auto;margin-right: auto" ng-show="loading">
+  <div class="container-fluid scrollable-content" ng-show="!loading">
+    <div class="alert alert-danger" ng-show="failed ">
+      <strong>Error!
+      </strong>Fill all fields!
+    </div>
+    <div>
+      <h4>Departure from:</h4>
+    </div>
+    <div>
+      <select class="form-control" id=""  ng-model="SearchTour.FromId" ng-change="GetAirports()">
+        <option value="" selected>Choose option...</option>
+        <option ng-repeat="airport in airportsFrom" value="{{airport.AirportId}}">{{airport.Name}}</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      <h4>Departure to:</h4>
+    </div>
+    <div>
+      <select class="form-control"   ng-model="SearchTour.ToId" ng-change="GetAirports()">
+        <option value="" selected>Choose option...</option>
+        <option ng-repeat="airport in airportsTo" value="{{airport.AirportId}}">{{airport.Name}}</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      <h4>Choose date:</h4>
+    </div>
+    <div>
+      <input type="datetime-local" class="" name="bdaytime" ng-model="SearchTour.Date" style="width: 100% !important;"
+             value="SearchTour.Date | date: 'dd-MM-yyyy'">
+    </div>
+    <br>
+    <div>
+      <h4>Count of Passenger:</h4>
+    </div>
+    <div>
+      <select class="form-control"   ng-model="SearchTour.CountPassenger">
+        <option value="" selected>Choose option...</option>
+        <option ng-repeat="pes in passengersCount" value="{{pes}}">{{pes}}</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      <h4>Choose flight class:</h4>
+    </div>
+    <div>
+      <select class="form-control"   ng-model="SearchTour.TourClass">
+        <option value="" selected>Choose option...</option>
+        <option ng-repeat="class in tourClass" value="{{class}}">{{class}}</option>
+      </select>
+    </div>
+
+    <!-- modal-->
+    <br>
+    <br>
+    <br>
+    <div>
+          <button type="button" class="save-button form-control"  ng-click="GotoSearchResult()">Search</button>
+    </div>
+  </div>
+</section>

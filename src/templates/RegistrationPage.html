@@ -1,0 +1,40 @@
+<section class="section container-fluid scrollable" style="height: 100% !important;">
+    <div class="container-fluid scrollable-content" >
+        <br>
+        <h3 style="text-align: center;">Registration</h3><br><br>
+
+        <form ng-submit="submit()">
+            <div class="alert alert-danger" ng-show="failed">
+                <strong>Error!
+                </strong>This user exist!
+            </div>
+            <div class="col-sm-12 col-sm-12">
+                <label>First name: </label>
+                <input class="form-control" ng-model="client.FirstName" type="text" placeholder="first name" required>
+            </div>
+            <div class="col-sm-12 col-sm-12">
+                <label>Last name: </label>
+                <input class="form-control" ng-model="client.LastName" type="text" placeholder="last name" required>
+            </div>
+            <div class="col-sm-12 col-sm-12">
+                <label>Email: </label>
+                <input class="form-control" ng-model="client.Email" type="text" placeholder="email" required>
+            </div>
+            <div class="col-sm-12 col-sm-12">
+                <label>Password: </label>
+                <input class="form-control" ng-model="client.Password" type="password" placeholder="password" required>
+            </div>
+            <div class="col-sm-12 col-sm-12">
+                <label>Birthday: </label>
+                <input class="form-control" ng-model="client.Birthday" type="datetime-local">
+            </div>
+            <br/>
+            <br/>
+
+            <div class="col-sm-12 col-sm-12">
+                <button type="submit" class="save-button form-control">Regisrt</button>
+            </div>
+            <br/>
+        </form>
+    </div>
+</section>

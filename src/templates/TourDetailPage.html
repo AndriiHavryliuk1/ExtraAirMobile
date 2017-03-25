@@ -1,0 +1,75 @@
+<section class="section container-fluid scrollable" style="height: 100% !important;">
+    <div class="alert alert-danger" ng-show="failed">
+        <strong>Error!
+        </strong>Server error!
+    </div>
+    <div class="alert alert-success" ng-show="success">
+        <strong>Success!</strong> Order is saved please visit your email to get more information!
+        <a href="#/listoforders">Go to orders page</a>
+    </div>
+    <div class="container-fluid mycontent-center scrollable-content" ng-hide="success || failed">
+        <div class="row">
+            <div class=" col-sm-4 col-xs-4 col-offset-sm-1 col-offset-xs-1">
+                <h3>{{Tour.AirportFrom.City}}</h3>
+            </div>
+            <div class=" col-sm-1 col-xs-1">
+                <i class="fa fa-plane" style="font-size: 14px;"></i>
+            </div>
+            <div class=" col-sm-5 col-xs-5">
+                <h3>{{Tour.AirportTo.City}}</h3>
+            </div>
+        </div>
+        <hr>
+
+        <div>
+            <div class="form-group">
+                <span>Class: </span>  <span>{{Tour.TourClass}}</span>
+            </div>
+
+            <div class="row">
+                <div class="col-cm-3 col-xs-3">
+                    <h3>{{Tour.timeStart}}</h3>
+                </div>
+                <div class="col-cm-3 col-xs-3">
+                    <p>{{Tour.AirportFrom.City}}</p>
+                    <p>{{Tour.dateStartR}}({{Tour.dayStart}})</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        logo
+        <br>
+        <div>
+
+            <div class="row">
+                <div class="col-cm-3 col-xs-3">
+                    <h3>{{Tour.timeFinish}}</h3>
+                </div>
+                <div class="col-cm-4 col-xs-4">
+                    <p>{{Tour.AirportTo.City}}</p>
+                    <p>{{Tour.dateStartR}} ({{Tour.dayFinish}})</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="">
+            <div class="">
+                <span>Count of passenger: {{Tour.CountPassenger}}  </span>
+            </div>
+        </div>
+        <div class="">
+            <div class="">
+                <span>Plane: {{Tour.Plane.Name}}  </span>
+            </div>
+        </div>
+<br>
+        <div class="col-sm-12 col-sm-12">
+            <button class="save-button form-control" ng-click="postOrder()">BUY FOR {{Tour.Price}}$</button>
+        </div>
+
+
+
+
+    </div>
+</section>

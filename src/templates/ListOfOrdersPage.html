@@ -1,0 +1,63 @@
+<section class="section container-fluid scrollable" style="height: 100% !important;">
+    <img src="loading.gif" style="display: block;margin-top:auto;margin-bottomt: auto;
+  margin-left:auto;margin-right: auto" ng-show="loading">
+    <div class="container-fluid mycontent-center scrollable-content" ng-show="!loading">
+        <div>
+            <h4>Filter for orders:</h4>
+        </div>
+        <div>
+            <select class="form-control" ng-model="OrderType" ng-change="getOrders()">
+                <option value="All" selected>All</option>
+                <option value="Future" >Future</option>
+                <option value="Last" >Last</option>
+            </select>
+        </div>
+        <hr>
+
+        <div class="panel panel-default " ng-repeat="order in orders" ng-click="GoToMain()">
+            <div class="panel panel-body">
+                <div class="row">
+                    <div class=" col-sm-5 col-xs-5">
+                        <h3>{{order.tour.AirportFrom.City}}</h3>
+                    </div>
+                    <div class=" col-sm-2 col-xs-2">
+                        <i class="fa fa-plane" style="font-size: 14px;"></i>
+                    </div>
+                    <div class=" col-sm-5 col-xs-5">
+                        <h3>{{order.tour.AirportTo.City}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-sm-5 col-xs-5">
+                        <h3>{{order.timeStart}}</h3>
+                    </div>
+                    <div class=" col-sm-2 col-xs-2">
+
+                    </div>
+                    <div class=" col-sm-5 col-xs-5">
+                        <h3>{{order.timeFinish}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-xs-5">
+                        <p>{{order.dateStartR}}</p>
+                        <p>{{order.dayStart}}</p>
+
+                    </div>
+                    <div class=" col-sm-2 col-xs-2">
+
+                    </div>
+                    <div class=" col-sm-5 col-xs-5">
+                        <p>{{order.dateFinishR}}</p>
+                        <p>{{order.dayFinish}}</p>
+                    </div>
+                </div>
+                <div >
+                    <span>Price: {{order.Price}}</span>
+                    <span>Paid: {{order.Paid}}</span>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>

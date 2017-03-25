@@ -1,0 +1,65 @@
+<section class="section container-fluid scrollable" style="height: 100% !important;">
+    <img src="loading.gif" style="display: block;margin-top:auto;margin-bottom: auto;
+  margin-left:auto;margin-right: auto" ng-show="loading">
+    <div class="alert alert-danger" ng-show="failed && !loading">
+        <strong>Error!
+        </strong>Please login to your account!
+        <br>
+        <a href="#/login">Go to login page</a>
+    </div>
+    <div class="container-fluid mycontent-center scrollable-content" ng-hide="failed && !loading">
+        <div class="row" >
+            <div class=" col-sm-2 col-xs-2">
+
+            </div>
+            <div class=" col-sm-4 col-xs-4 col-offset-sm-1 col-offset-xs-1">
+                <h3>{{searchResult[0].AirportFrom.City}}</h3>
+            </div>
+            <div class=" col-sm-1 col-xs-1">
+                <i class="fa fa-plane" style="font-size: 14px;"></i>
+            </div>
+            <div class=" col-sm-3 col-xs-3">
+                <h3>{{searchResult[0].AirportTo.City}}</h3>
+            </div>
+        </div>
+        <hr>
+        <div class="panel panel-default " ng-repeat="res in searchResult" ng-click="GoToTourDetail(res.TourId)">
+            <div class="panel panel-body">
+                <div class="row">
+                    <div class=" col-sm-5 col-xs-5">
+                        <img src="logonorm.png" height="35px" width="35px">
+                    </div>
+                    <div class=" col-sm-2 col-xs-2">
+                        <i class="fa fa-plane"></i>
+                    </div>
+                    <div class=" col-sm-5 col-xs-5">
+                        <h3>Price: {{res.Price}}$</h3>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class=" col-sm-5 col-xs-5">
+                        <h4>
+                            {{res.timeStart }}
+                        </h4>
+                        <h5>
+                            {{res.dateStartR }}
+                        </h5>
+                    </div>
+                    <div class=" col-sm-2 col-xs-2">
+
+                    </div>
+                    <div class=" col-sm-5 col-xs-5">
+                        <h4>
+                            {{res.timeFinish }}
+                        </h4>
+                        <h5>
+                            {{res.dateStartR }}
+                        </h5>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>

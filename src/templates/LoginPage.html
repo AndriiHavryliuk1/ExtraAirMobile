@@ -1,0 +1,45 @@
+<section class="section container-fluid scrollable" style="height: 100% !important;">
+    <div class="container-fluid scrollable-content" ng-show="!isAuthorized">
+        <br><br>
+        <h3 style="text-align: center;">Login to account</h3>
+
+        <form ng-submit="submit()">
+            <div class="alert alert-danger" ng-show="failed">
+                <strong>Error!
+                </strong> Invalid email or password.
+            </div>
+            <br/>
+            <div class="col-sm-12 col-sm-12">
+                <label> Email: </label>
+                <input class="form-control" ng-model="user.Email" type="text" placeholder="email" required>
+            </div>
+            <br/>
+            <div class="col-sm-12 col-sm-12">
+                <label> Password: </label>
+                <input class="form-control" ng-model="user.Password" type="password" placeholder="password" required>
+            </div>
+            <br/>
+            <br/>
+            <div class="col-sm-12 col-sm-12">
+                <button type="submit" class="save-button form-control">Login</button>
+            </div>
+            <div>
+                <a href="#/registration" >
+                    Registration
+                </a>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="container-fluid" ng-show="isAuthorized">
+        <br>
+
+        <button type="button" class="save-button form-control" ng-click="logout()">Logout</button>
+        <h3>To do this page!!!</h3>
+    </div>
+
+
+
+
+</section>
